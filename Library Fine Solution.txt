@@ -1,0 +1,59 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.Arrays;
+
+public class Solution {
+    public static int Library(int d1,int m1,int y1,int d2,int m2,int y2)
+    {
+        int fine;
+        int diff;
+        if(y1 < y2)
+        {
+            System.out.println(0);
+        }
+       else if(y1 == y2 && m1 > m2 )
+        {
+            diff = m1 - m2;
+            fine = 500 * diff;
+            System.out.println(fine);
+        }
+        else if(y1 == y2 && m1 == m2 && d1 > d2)
+        {
+            diff = d1 - d2;
+            fine = 15 * diff;
+            System.out.println(fine);
+        }
+        else if (y1 > y2)
+        {
+            System.out.println(10000);
+        }
+        else if (y1 == y2 && m1 < m2)
+        {
+            System.out.println(0);
+        }
+        else if(y1 == y2 && m1 == m2 && d1 < d2)
+        {
+            System.out.println(0);
+        }
+        else if(y1 == y2 && m1 == m2 && d1 == d2)
+        {
+            System.out.println(0);
+        }
+        
+        return 1;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int d1 = in.nextInt();
+        int m1 = in.nextInt();
+        int y1 = in.nextInt();
+        int d2 = in.nextInt();
+        int m2 = in.nextInt();
+        int y2 = in.nextInt();
+        int fine = Library(d1,m1,y1,d2,m2,y2);
+    }
+}
